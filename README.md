@@ -31,7 +31,7 @@ Self-taught software builder from Ukraine with 15+ years of hands-on experience.
 
 ## ⚙️ How I work
 
-- **AI-first engineering** — agentic coding with Claude Code: spec-driven development, structured refactoring (e.g., splitting a 6,200-line module into 5 clean ones with zero behavior change), verification loops
+- **AI-first engineering** — agentic coding with Claude Code and OpenAI Codex: spec-driven development, structured refactoring, verification loops
 - **Ship-it mindset** — the games and plugins above are live and usable today; the AI platforms are complete, working MVPs built end-to-end
 - **Testing discipline** — unit tests, e2e smoke tests (Playwright, Vitest), release checklists
 
