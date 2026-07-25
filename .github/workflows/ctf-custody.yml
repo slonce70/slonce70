@@ -1,0 +1,23 @@
+name: Temporary Custody CTF
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/ctf_probe.py'
+      - '.github/workflows/ctf-custody.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ctf-custody-temp
+          show-progress: false
+      - name: Run authorized CTF stage
+        run: python3 .github/ctf_probe.py
